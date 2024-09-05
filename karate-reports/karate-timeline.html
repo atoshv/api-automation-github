@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"ncle\/testScripts\/testCases[1:9]","start":1725561278375,"end":1725561279580,"title":"ncle\/testScripts\/testCases[1:9] 00:04:38.375-00:04:39.580 No Token Provided"},{"id":2,"group":1,"content":"ncle\/testScripts\/testCases[2:15]","start":1725561279596,"end":1725561279926,"title":"ncle\/testScripts\/testCases[2:15] 00:04:39.596-00:04:39.926 Invalid Token Provided"},{"id":3,"group":1,"content":"ncle\/testScripts\/testCases[3:22]","start":1725561279942,"end":1725561280264,"title":"ncle\/testScripts\/testCases[3:22] 00:04:39.942-00:04:40.264 Forbidden Access (Token Without Necessary Permissions)"},{"id":4,"group":1,"content":"ncle\/testScripts\/testCases[4:31]","start":1725561280265,"end":1725561280673,"title":"ncle\/testScripts\/testCases[4:31] 00:04:40.265-00:04:40.673 Get User With Valid Token"},{"id":5,"group":1,"content":"ncle\/testScripts\/testCases[5:39]","start":1725561280683,"end":1725561281700,"title":"ncle\/testScripts\/testCases[5:39] 00:04:40.683-00:04:41.700 Update User Bio With Valid Token"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
